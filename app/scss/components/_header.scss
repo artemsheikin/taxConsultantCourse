@@ -1,1 +1,32 @@
+.header {
+	color: $color-title;
+	font-size: 16px;
+	line-height: 125%;
+	&__nav {
+		display: flex;
+		justify-content: space-between;
+		padding: 48px 130px 30px 22px;
+	}
+	&__list {
+		display: flex;
+		align-items: center;
+	}
+	&__link {
+		padding: 5px;
+		transition: all 0.3s ease;
+	}
+	&__item:not(:last-child) {
+		margin-right: 30px;
+	}
+}
 
+.header__link:hover,
+.header__link:focus,
+.header__link:active {
+	color: $color-active;
+}
+
+.header__link:focus {
+	box-shadow: 0 0 0 2px $color-blue-dark;
+	border-radius: 32px;
+}

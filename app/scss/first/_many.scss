@@ -1,0 +1,87 @@
+.many {
+	padding-bottom: 120px;
+
+	&__title {
+		margin-bottom: 57px;
+		max-width: 690px;
+	}
+
+	&__subtext {
+		display: inline-block;
+		font-size: 20px;
+		padding-left: 55px;
+		max-width: 460px;
+		position: relative;
+		z-index: 1;
+		grid-area: header;
+		align-self: start;
+		&::after {
+			content: '';
+			position: absolute;
+			background-image: url('../images/icons/hh.svg');
+			width: 44px;
+			height: 44px;
+			top: 0;
+			left: 0;
+		}
+	}
+
+	&__list {
+		display: grid;
+		gap: 10px;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: auto auto;
+		align-items: end;
+		grid-template-areas:
+			'header header large'
+			'small medium large';
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		max-width: 384px;
+		border-radius: 32px;
+		width: 100%;
+		background-color: $color-bg-light;
+		height: 186px;
+		padding: 32px 40px;
+		&--small {
+			grid-area: small;
+		}
+		&--medium {
+			height: 298px;
+			grid-area: medium;
+		}
+		&--large {
+			height: 434px;
+			grid-area: large;
+		}
+	}
+
+	&__item-title {
+		color: $color-title;
+		font-size: 39px;
+		line-height: 105%;
+	}
+
+	&__inner {
+		display: flex;
+		align-items: center;
+	}
+
+	&__rank {
+		color: $color-title;
+		font-size: 14px;
+		line-height: 142.857%;
+		border-radius: 20px;
+		padding: 9px 13px;
+		background-color: $color-white;
+		margin-right: 8px;
+	}
+
+	&__yers {
+	}
+}

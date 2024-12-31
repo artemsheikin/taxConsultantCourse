@@ -1,15 +1,34 @@
 body {
 	display: flex;
 	flex-direction: column;
-	background-color: $bg;
-	color: #666;
+	background-color: $color-white;
+	color: $color-grey;
 	font-family: Roboto, sans-serif;
 	font-size: 18px;
 	font-weight: 400;
 	line-height: 122%;
 }
 
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+	white-space: nowrap;
+}
+
 .container {
+	max-width: 1198px;
+	margin: 0 auto;
+	padding: 0 15px;
+	position: relative;
+}
+
+.header__container {
 	max-width: 1430px;
 	margin: 0 auto;
 	padding: 0 15px;
@@ -17,4 +36,185 @@ body {
 
 .main {
 	flex-grow: 1;
+}
+
+/* лого */
+.logo {
+	position: relative;
+	max-height: auto;
+	max-width: 344px;
+	object-fit: contain;
+	object-position: center;
+	z-index: 5;
+	cursor: pointer;
+}
+
+/* заголовки */
+.title {
+	color: $color-title;
+	font-family: Roboto, sans-serif;
+	font-size: 52px;
+	line-height: 103%;
+}
+
+/* бургер */
+.burger {
+	display: none;
+	width: 40px; // ширина кнопки
+	height: 30px; // висота кнопки
+	position: relative;
+	z-index: 20;
+	color: $color-black;
+	cursor: pointer;
+}
+
+.burger__line {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+	height: 2px; // висота линии
+	background-color: currentColor;
+	transition: transform 0.3s ease-in-out;
+}
+
+.burger::before,
+.burger::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 2px; // висота линий
+	background-color: currentColor;
+	transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+}
+
+.burger::before {
+	top: 0;
+}
+
+.burger::after {
+	top: calc(100% - 2px);
+}
+
+.burger--active .burger__line {
+	transform: scale(0);
+	transition: transform 0.3s ease-in-out;
+}
+
+.burger--active::before {
+	transform: rotate(45deg);
+	top: 50%;
+	transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+}
+
+.burger--active::after {
+	transform: rotate(-45deg);
+	top: 50%;
+	transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+}
+
+.lock {
+	overflow: hidden;
+	position: relative;
+}
+
+.lock::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* аккордеон */
+
+.accordion {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	&__title {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-family: Roboto, sans-serif;
+		font-size: 18px;
+		padding: 20px;
+		margin-bottom: 2px;
+		min-height: 72px;
+		line-height: 122%;
+		cursor: pointer;
+		color: $color-title;
+		background-color: $color-bg-light;
+		h3 {
+			padding-right: 10px;
+		}
+	}
+
+	&__title.active {
+		box-shadow: 0 0 12px 1px $color-active;
+	}
+
+	&__title span {
+		display: inline-flex;
+		flex-shrink: 0;
+		position: relative;
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+		background-color: $color-white;
+		transform: rotate(0);
+		transition: transform 0.5s ease-out;
+	}
+
+	&__title.active span {
+		transform: rotate(180deg);
+	}
+
+	&__title span::before {
+		content: '';
+		position: absolute;
+		width: 20%;
+		height: 1px;
+		left: 46%;
+		top: 50%;
+		transform: translate(-50%, -50%) rotate(45deg);
+		background-color: $color-grey;
+	}
+
+	&__title span::after {
+		content: '';
+		position: absolute;
+		width: 1px;
+		height: 20%;
+		left: 60%;
+		top: 50%;
+		transform: translate(-50%, -50%) rotate(45deg);
+		background-color: $color-grey;
+	}
+
+	&__content {
+		font-size: 18px;
+		line-height: 1.3;
+		overflow: hidden;
+		padding: 0 20px;
+		box-sizing: content-box;
+		max-height: 0;
+		opacity: 0;
+		visibility: hidden;
+		transition: max-height 0.5s ease-out, padding 0.5s ease-out,
+			opacity 0.1s ease-out 0.5s, visibility 0.1s ease-out 0.5s;
+	}
+
+	&__content.active {
+		visibility: visible;
+		opacity: 1;
+		padding: 20px;
+		transition: max-height 0.5s ease-out, padding 0.5s ease-out,
+			opacity 0.1s ease-out, visibility 0.1s ease-out;
+	}
 }

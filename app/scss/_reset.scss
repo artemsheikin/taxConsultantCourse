@@ -35,9 +35,13 @@ blockquote,
 dl,
 dd {
 	margin: 0;
+	font-size: inherit; /* Наследуем размер шрифта от родителя */
+	font-weight: inherit; /* Наследуем жирность шрифта */
+	color: inherit; /* Наследуем цвет */
 }
 
-ul {
+ul,
+li {
 	list-style: none;
 }
 

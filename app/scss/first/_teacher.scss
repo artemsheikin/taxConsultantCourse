@@ -1,0 +1,78 @@
+.teacher {
+	padding: 21px 0;
+	&__title {
+		margin-bottom: 57px;
+		max-width: 448px;
+	}
+
+	&__svg {
+		width: 24px;
+		height: 24px;
+	}
+
+	&__arrow {
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		transition: opacity 0.3s ease;
+		width: 48px;
+		height: 48px;
+		bottom: 0;
+		right: 17px;
+		border-radius: 24px;
+		border: 1px solid $color-title;
+	}
+
+	&__prev {
+		right: 77px;
+	}
+}
+
+.teacherSwiper {
+	max-width: 1925px;
+	max-height: 650px; /* Фиксированная высота слайдера */
+	overflow: hidden; /* Лишнее скрывается */
+	padding-left: 30px;
+
+	&__slide {
+		max-width: 384px;
+		height: 100%;
+		cursor: pointer;
+		span {
+			display: block;
+			max-width: 340px;
+		}
+	}
+
+	&__img {
+		display: block;
+		width: 100%;
+		height: auto;
+		max-height: 476px;
+		object-fit: cover;
+		margin-bottom: 24px;
+		object-position: center top;
+		border-radius: 20px;
+	}
+
+	&__title {
+		color: $color-title;
+		font-size: 24px;
+		line-height: 116.667%;
+		margin-bottom: 12px;
+	}
+}
+
+.swiper-button-disabled {
+	opacity: 0.3; /* Стрелка "Next" будет менее заметной */
+	pointer-events: none; /* Отключить клики */
+	cursor: none;
+}
+
+.teacher__next:active,
+.teacher__prev:active {
+	transform: scale(0.9); /* Уменьшаем стрелку при клике */
+	opacity: 0.7; /* Изменяем прозрачность */
+}
