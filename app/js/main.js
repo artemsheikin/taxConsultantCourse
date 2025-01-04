@@ -1,3 +1,47 @@
+const showMore = document.querySelector('.reviews__button')
+const reviewsList = document.querySelector('.reviews__list')
+const allReviews = document.querySelectorAll('.reviews__item') // Все отзывы
+let visibleItems = 2 // Изначально отображаем 2 отзыва
+
+// Функция для обновления текста кнопки
+function updateButtonText() {
+	const hiddenItems = allReviews.length - visibleItems
+
+	// Проверяем, сколько отзывов осталось и изменяем текст кнопки
+	if (hiddenItems === 1) {
+		showMore.textContent = `Смотреть 1 отзыв`
+	} else if (hiddenItems > 1) {
+		showMore.textContent = `Смотреть ${hiddenItems} отзывов`
+	} else {
+		showMore.textContent = `Все отзывы отображены`
+	}
+}
+
+// Функция для отображения скрытых отзывов
+function loadMoreReviews() {
+	visibleItems += 2 // Показываем еще 2 отзыва
+
+	// Получаем все элементы отзывов
+	const visibleReviews = Array.from(allReviews).slice(0, visibleItems)
+	visibleReviews.forEach((item) => {
+		item.classList.add('is-visible') // Добавляем класс для отображения отзыва
+	})
+
+	// Обновляем текст кнопки
+	updateButtonText()
+
+	// Если все элементы видны, скрываем кнопку
+	if (visibleItems >= allReviews.length) {
+		showMore.style.display = 'none' // Скрываем кнопку, если все отзывы показаны
+	}
+}
+
+// Обработчик события для кнопки
+showMore.addEventListener('click', loadMoreReviews)
+
+// Изначально обновим текст кнопки
+updateButtonText()
+
 /*teacherSwiper */
 var swiper = new Swiper('.teacherSwiper', {
 	spaceBetween: 40,

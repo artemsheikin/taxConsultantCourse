@@ -1,0 +1,33 @@
+.support {
+	padding-bottom: 120px;
+	padding-top: 31px;
+	&__title {
+		max-width: 520px;
+		margin-bottom: 56px;
+	}
+
+	&__wrapper {
+		display: flex;
+		gap: 100px;
+	}
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		flex: 1 1;
+		border-radius: 32px;
+		padding: 0 30px 30px 24px;
+		max-width: 384px;
+		min-height: 476px;
+		color: $color-white;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	&__box-title {
+		margin-bottom: 8px;
+		font-size: 28px;
+		line-height: 114.286%;
+	}
+}

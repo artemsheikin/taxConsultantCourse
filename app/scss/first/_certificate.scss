@@ -1,0 +1,49 @@
+.certificate {
+	&__container {
+		padding: 36px 0 100px 0;
+		border-radius: 32px;
+		background-color: $color-bg-light;
+	}
+
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		gap: 60px;
+		max-width: 100%;
+		min-height: 504px;
+		border-radius: 32px;
+		background-color: $color-bg-certificate;
+	}
+
+	&__img-box {
+		flex-shrink: 0;
+		align-self: self-end;
+	}
+
+	&__img {
+		object-fit: contain;
+		object-position: center;
+	}
+
+	&__inner {
+		max-width: 568px;
+		width: 100%;
+		margin-top: 110px;
+	}
+
+	&__title {
+		max-width: 294px;
+		color: #fff;
+		font-size: 40px;
+		line-height: 105%;
+		margin-bottom: 68px;
+	}
+
+	&__text {
+		max-width: 294px;
+		color: #fff;
+		font-size: 9px;
+		font-weight: 400;
+		line-height: normal;
+	}
+}

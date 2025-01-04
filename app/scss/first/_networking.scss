@@ -1,0 +1,24 @@
+.networking {
+	padding-top: 21px;
+	padding-bottom: 108px;
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__title {
+		max-width: 330px;
+	}
+
+	&__accordion--box {
+		width: 568px;
+	}
+
+	&__accordion-title--first {
+		border-radius: 15px 15px 0 0;
+	}
+
+	&__accordion-title--last {
+		border-radius: 0 0 15px 15px;
+	}
+}
