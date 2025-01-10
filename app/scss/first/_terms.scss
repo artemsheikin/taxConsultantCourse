@@ -1,0 +1,29 @@
+.terms {
+	padding: 21px 0 364px 0;
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		max-width: 788px;
+	}
+
+	&__title {
+		max-width: 255px;
+	}
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		max-width: 380px;
+		min-height: 243px;
+		padding: 29px 32px 35px 25px;
+		border-radius: 32px;
+		background-color: $color-bg-light;
+	}
+
+	&__heading {
+		color: $color-title;
+		font-size: 32px;
+		line-height: 112.5%;
+	}
+}

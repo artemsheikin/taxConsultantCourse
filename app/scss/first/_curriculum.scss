@@ -1,0 +1,209 @@
+.curriculum {
+	padding: 121px 0 120px 0;
+	background-color: $color-bg-curriculum;
+	&__title {
+		max-width: 550px;
+		margin-bottom: 110px;
+	}
+}
+
+.event {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(200px, 368px));
+	column-gap: 32px;
+	row-gap: 64px;
+	/* event__top */
+	&__top {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		max-width: 368px;
+		height: 48px;
+		background-color: $color-top-title;
+		border-radius: 20px 20px 0 0;
+		top: -45px;
+		right: 0;
+		left: 0;
+	}
+
+	&__top-title {
+		padding-left: 32px;
+		color: $color-event-title;
+		font-size: 16px;
+		line-height: 125%;
+		position: relative;
+		&::after {
+			content: '';
+			position: absolute;
+			background-image: url('../images/icons/star.svg');
+			background-repeat: no-repeat;
+			top: 0;
+			left: 0;
+			width: 24px;
+			height: 24px;
+		}
+	}
+
+	&__item {
+		display: grid;
+		position: relative;
+		max-width: 368px;
+		min-height: 750px;
+		padding: 34px 24px 34px 24px;
+		border-radius: 20px;
+		background-color: $color-white;
+	}
+
+	&__title {
+		color: $color-title;
+		font-size: 24px;
+		line-height: 116.667%;
+		max-width: 281px;
+		margin-bottom: 34px;
+	}
+
+	/*event__heading-list */
+	&__heading-list {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+		min-height: 146px;
+		/* margin-bottom: 72px; */
+	}
+
+	&__heading-item {
+		display: flex;
+		align-items: center;
+		color: $color-title;
+		font-family: Tahoma, sans-serif;
+		font-size: 14px;
+		line-height: 142.857%;
+	}
+
+	&__hour {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		margin-right: 8px;
+		width: 40px;
+		height: 32px;
+		border-radius: 20px;
+		background-color: $color-bg-btn;
+	}
+
+	&__text {
+		display: inline-block;
+		max-width: 146px;
+	}
+
+	/* event__info-list */
+	&__info-list {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		min-height: 272px;
+		padding-bottom: 30px;
+		/* margin-bottom: 107px; */
+	}
+
+	&__info-text {
+		color: $color-title;
+		font-size: 14px;
+		line-height: 142.857%;
+		padding-left: 28px;
+		position: relative;
+		&::before {
+			position: absolute;
+			content: '';
+			background-image: url('../images/icons/arrow-prise.svg');
+			width: 16px;
+			height: 16px;
+			top: 0;
+			left: 0;
+		}
+	}
+
+	/* event__prise-list */
+	&__prise-list--end {
+		align-self: end;
+	}
+
+	&__prise-list {
+		color: $color-title;
+		margin-bottom: 40px;
+	}
+
+	&__prise-item {
+		display: flex;
+		font-size: 12px;
+	}
+
+	/* 1 */
+	&__discount,
+	&__deadline {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		height: 26px;
+		line-height: 133.333%;
+		border-radius: 20px;
+		background-color: $color-bg-deadline;
+	}
+
+	&__discount {
+		width: 46px;
+		margin-right: 5px;
+	}
+
+	&__deadline {
+		width: 121px;
+		margin-bottom: 10px;
+	}
+
+	/* 2 */
+	&__prise,
+	&__currency,
+	&__subprise {
+		font-family: Tahoma, sans-serif;
+		font-size: 16px;
+		line-height: 125%;
+		margin-right: 13px;
+	}
+
+	&__prise {
+		font-size: 32px;
+		line-height: 112.5%;
+		margin-bottom: 4px;
+	}
+
+	&__subprise {
+		color: $color-subprise;
+		line-height: 125%;
+		margin-right: 0;
+	}
+
+	/* 3 */
+	&__installment {
+		line-height: 133.333%;
+	}
+
+	/* btn */
+	&__btn {
+		color: $color-white;
+		text-align: center;
+		font-size: 16px;
+		line-height: 125%;
+		max-width: 320px;
+		width: 100%;
+		height: 48px;
+		background-color: #3d3bff;
+		border-radius: 8px;
+	}
+}
+
+.event__item .event__top {
+	border-top: none; /* Убираем бордер, если есть элемент event__top */
+}
+
+/* effect */

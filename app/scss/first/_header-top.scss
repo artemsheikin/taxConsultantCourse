@@ -163,11 +163,15 @@
 }
 
 .header-top__btn:hover,
+.event__btn:hover,
+.event__btn:focus,
+.event__btn:active,
 .header-top__btn:focus,
 .header-top__btn:active {
 	background-color: $color-active;
 }
 
-.header-top__btn:focus {
+.header-top__btn:focus,
+.event__btn:focus {
 	box-shadow: 0 0 0 2px $color-blue-dark;
 }

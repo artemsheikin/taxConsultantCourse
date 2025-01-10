@@ -1,0 +1,131 @@
+.footer {
+	background-color: $color-bg-certificate;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	color: $color-white;
+	font-family: Tahoma, sans-serif;
+	font-size: 12px;
+	line-height: 133.333%;
+}
+
+/* footer-top */
+
+.footer-top {
+	display: flex;
+	justify-content: space-between;
+	min-height: 120px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	&__wrapper-tel {
+		display: flex;
+		justify-content: space-between;
+		max-width: 370px;
+		width: 100%;
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	&__tel {
+		font-size: 18px;
+		line-height: 111.111%;
+	}
+
+	&__tel-info {
+		font-size: 12px;
+	}
+
+	&__wrapper-adress {
+		display: flex;
+		justify-content: space-between;
+		max-width: 578px;
+		width: 100%;
+		font-style: normal;
+	}
+
+	&__adress {
+		max-width: 366px;
+		margin-bottom: 15px;
+		font-size: 14px;
+		line-height: 142.857%;
+	}
+
+	&__website {
+		font-size: 14px;
+		line-height: 142.857%;
+	}
+
+	&__social {
+		display: flex;
+		flex-shrink: 0;
+	}
+
+	&__social-item {
+		&:not(:last-child) {
+			margin-right: 16px;
+		}
+	}
+
+	&__img {
+		width: 24px;
+		height: 24px;
+		object-fit: contain;
+		object-position: center;
+	}
+}
+
+/* footer-center */
+
+.footer-center {
+	padding-top: 35px;
+	padding-bottom: 35px;
+	display: flex;
+	justify-content: space-between;
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		align-content: flex-start;
+		gap: 15px;
+		max-width: 505px;
+	}
+
+	&__text {
+		display: flex;
+		max-width: 580px;
+		flex-direction: column;
+		gap: 28px;
+		color: rgba(255, 255, 255, 0.65);
+		a {
+			display: inline;
+			text-decoration: underline;
+		}
+	}
+}
+
+/* footer-bottom */
+
+.footer-bottom {
+	display: flex;
+	align-items: flex-end;
+	gap: 100px;
+	color: rgba(255, 255, 255, 0.65);
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		padding-left: 44px;
+		position: relative;
+		&::after {
+			content: '';
+			position: absolute;
+			background-image: url('../images/icons/ru.svg');
+			background-repeat: no-repeat;
+			background-size: contain;
+			width: 28px;
+			height: 35px;
+			top: 0;
+			left: 0;
+		}
+	}
+}

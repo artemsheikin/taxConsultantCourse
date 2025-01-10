@@ -20,7 +20,9 @@
 		border-radius: 20px;
 		background-color: $color-bg-light;
 		&:nth-child(n + 3) {
-			display: none;
+			display: none; /* Карточка отсутствует в DOM */
+			opacity: 0;
+			transition: opacity 1s ease-in-out;
 		}
 	}
 
@@ -97,5 +99,6 @@
 }
 
 .reviews__list .is-visible {
-	display: flex;
+	display: flex; /* Появляется в разметке */
+	opacity: 1;
 }
